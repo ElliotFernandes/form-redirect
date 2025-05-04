@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Form Access</title>
+    <title>Redirecting to Form</title>
+    <meta http-equiv="refresh" content="0; URL=''" id="redirect">
+    <script>
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+      const dateStr = `${yyyy}-${mm}-${dd}`;
+
+      const entryID = "entry.1167927728";
+      const baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSd4zTcjpC96yTRNSj8LSxCIfSy6oDCKvSfSmi4fpCpf8ANjIQ/viewform";
+
+      const fullURL = `${baseURL}?usp=pp_url&${entryID}=${dateStr}`;
+      document.getElementById('redirect').content = `0; URL='${fullURL}'`;
+    </script>
   </head>
   <body>
-    <h1>Welcome!</h1>
-    <p>Click the button below to access the form with today's date:</p>
-    <button onclick="redirectToForm()">Go to Form</button>
-
-    <script>
-      function redirectToForm() {
-        const today = new Date();
-        const yyyy = today.getFullYear();
-        const mm = String(today.getMonth() + 1).padStart(2, '0');
-        const dd = String(today.getDate()).padStart(2, '0');
-        const dateStr = `${yyyy}-${mm}-${dd}`;
-
-        const entryID = "entry.1167927728";
-        const baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSd4zTcjpC96yTRNSj8LSxCIfSy6oDCKvSfSmi4fpCpf8ANjIQ/viewform";
-
-        const fullURL = `${baseURL}?usp=pp_url&${entryID}=${dateStr}`;
-        window.location.href = fullURL;
-      }
-    </script>
+    Redirecting to your form with today’s date...
   </body>
 </html>
