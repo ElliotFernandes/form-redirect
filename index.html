@@ -10,14 +10,15 @@
       const dd = String(today.getDate()).padStart(2, '0');
       const dateStr = `${yyyy}-${mm}-${dd}`;
 
-      const entryID = "entry.1167927728";
+      const dateField = "entry.1167927728";
+      const currencyField = "entry.1669239394";
       const baseURL = "https://docs.google.com/forms/d/e/1FAIpQLSd4zTcjpC96yTRNSj8LSxCIfSy6oDCKvSfSmi4fpCpf8ANjIQ/viewform";
 
-      const fullURL = `${baseURL}?usp=pp_url&${entryID}=${dateStr}`;
+      const fullURL = `${baseURL}?usp=pp_url&${dateField}=${dateStr}&${currencyField}=HKD`;
       document.getElementById('redirect').content = `0; URL='${fullURL}'`;
     </script>
   </head>
   <body>
-    Redirecting to your form with today’s date...
+    Redirecting to your form with today’s date and HKD...
   </body>
 </html>
